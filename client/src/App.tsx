@@ -1,14 +1,13 @@
 import React, { FC } from 'react';
-import Hello from './Hello';
+import './styles';
+import { Header, Footer } from './partials';
+import Body from './content';
 
-interface AppProps {
-  language: string;
-}
-
-const App: FC<AppProps> = ({ language }) => (
+const App: FC = () => (
   <>
-    <h1>Welcome to Create {language} App!</h1>
-    <Hello />
+    <Header />
+    <Body />
+    <Footer />
   </>
 );
 

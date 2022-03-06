@@ -12,6 +12,16 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/prefer-stateless-function': 'off',
     'react/function-component-definition': 'off', // typescript buggy
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -25,5 +35,17 @@ module.exports = {
     es6: true,
     browser: true,
     node: true,
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: [
+          'src',
+        ],
+        extensions: [
+          '.js', '.jsx', '.ts', '.tsx',
+        ],
+      },
+    },
   },
 };
